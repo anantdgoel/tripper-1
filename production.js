@@ -1,1 +1,1 @@
-require('./api/runtime.js')("production");
+require('./api/runtime.js')("development");
