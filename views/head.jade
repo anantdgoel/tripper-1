@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="shortcut icon" type="image/png" href="/img/hackfinder.png")
+        title= title || 'Find people traveling too'
+        script(src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js")
+        script(src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js")
+        script(src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js")
+        link(rel="stylesheet" href="https://js.arcgis.com/3.18/esri/css/esri.css")
+        script(src="https://js.arcgis.com/3.18/")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCehLQlL5Vb9K4DeqJyDd_3oyrlz63KDIY&libraries=places")
+        script(src='/js/client.js', type='text/javascript')
+        link(href='/css/client.css', rel='stylesheet', type='text/css')
+    body
+block content

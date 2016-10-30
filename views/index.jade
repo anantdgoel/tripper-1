@@ -1,0 +1,147 @@
+include head
+
+
+block content
+  -if(!user){
+  .content-login
+    .content-login-h
+      .logo
+      .text
+      .map--buttons
+        a(href='/login')
+          .map-button.login-with-Facebook Login with Facebook
+        .map-smol-text We don't post anything to Facebook.
+  -} else {
+  .content-main(data-id=user.id data-pic=user.picture data-name=user.name)
+   .menu-tile
+    .menu-block#closemenu
+      .fa.fa-bars
+    .menu-block.menu-block-title
+      .menu-block-image(style="background-image:url(" + user.picture + ")")
+      .menu-block-content
+        .menu-block-user= user.name
+        .menu-block-text= Math.round((Math.random() * 1000)) + " miles on Tripper"
+      .clear
+    .menu-block My Routes
+    .menu-block Past Routes
+    .menu-block Settings
+    .menu-block About Tripper
+    .menu-block Log Out
+   .chat-content
+     header
+       .return.fa.fa-chevron-left
+       .chat-title My Conversations
+       .message.fa.fa-plus
+     .chat
+      .chat-new
+        .chatroom-block(data-ids='10205269038044802,1029754610470130')
+          .chatroom-block-images
+            .cbi.chatroom-block-images-1(style='background-image:url(https://scontent.xx.fbcdn.net/v/t1.0-1/c0.24.50.50/p50x50/13557689_10204694331477497_5177051703478388511_n.jpg?oh=a0f0da44ad049888f81a79f3d82c6355&oe=589E5F81)')
+            .cbi.chatroom-block-images-2(style='background-image:url(https://scontent.xx.fbcdn.net/v/t1.0-1/c8.0.50.50/p50x50/14203301_996749523770639_575639596729463316_n.jpg?oh=37e40267c1e8616e7c55a364640642eb&oe=58A4BC76)')
+            .cbi.chatroom-block-images-3(style='background-image:url(https://scontent.xx.fbcdn.net/v/t1.0-9/12717690_10205175776666991_2260254898713939247_n.jpg?oh=3627a0e69a69006536c5dafd7a2b2e65&oe=58A77A5A)')
+            .clear
+          .chatroom-block-content
+            .chatroom-block-name Purple Doggo
+            .chatroom-block-travel DTW - Temple
+          .chatroom-block-time 9:00AM
+          .clear
+      .chat-bar Archived/Past Trips
+      .chat-old
+        .chatroom-block(data-ids='2,4,5,1029754610470130')
+          .chatroom-block-images
+            .cbi.chatroom-block-images-1(style='background-image:url(https://static.pexels.com/photos/21273/pexels-photo.jpg)')
+            .cbi.chatroom-block-images-2(style='background-image:url(https://static.pexels.com/photos/69212/pexels-photo-69212.jpeg)')
+            .cbi.chatroom-block-images-3(style='background-image:url(https://static.pexels.com/photos/27411/pexels-photo-27411.jpg)')
+            .clear
+          .chatroom-block-content
+            .chatroom-block-name Blue Beetle
+            .chatroom-block-travel 16 Miles on the HW99-S
+          .chatroom-block-time 8:43 AM
+          .clear
+        .chatroom-block(data-ids='7,6,3,1029754610470130')
+          .chatroom-block-images
+            .cbi.chatroom-block-images-1(style='background-image:url(https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg)')
+            .clear
+          .chatroom-block-content
+            .chatroom-block-name Red Antelope
+            .chatroom-block-travel 102 Miles on the I5-S
+          .chatroom-block-time 2:03 AM
+          .clear
+        .chatroom-block(data-ids='2,1,4,1029754610470130')
+          .chatroom-block-images
+            .cbi.chatroom-block-images-1(style='background-image:url(https://static.pexels.com/photos/51969/model-female-girl-beautiful-51969.jpeg)')
+            .cbi.chatroom-block-images-2(style='background-image:url(https://static.pexels.com/photos/27411/pexels-photo-27411.jpg)')
+            .clear
+          .chatroom-block-content
+            .chatroom-block-name Green Pickle
+            .chatroom-block-travel 46 Miles on the I280-S
+          .chatroom-block-time THUR 7
+          .clear
+   .chat-interface
+     header
+       .return-to-main.fa.fa-chevron-left
+       .chat-title Purple Doggo
+       .ab.fa
+     .chat-conversation
+     .chat-modal-over
+       .chat-modal-item
+         .fa.fa-cancel
+         text Share location
+      .chat-modal-item
+        .fa.fa-cancel
+        text Stop talking to this person
+     .chat-text-enter
+      input(placeholder="Press enter to send message")
+      .chat-options.fa-chevron-up.fa
+   .map-content
+    //.user-image(style='background-image:url(' + user.picture + ')')
+    header
+      .menu.fa.fa-bars#openmenu
+      .logo
+      .message.fa.fa-comment-o
+    .map#map
+    .map--overlay
+      .map--input--start.map--input--block
+        .map--input--text Current Location
+        input#startIndex(type='text' autocomplete='false')
+      .map--input--end.map--input--block
+        .map--input--text Destination
+        input#endIndex(type='text' autocomplete='false')
+    .map--centre There are 2 Trippers near you
+    .map--output-Com
+      .logo_big
+      .motextok Hey There!
+      .motextn A user named Shubham Naik seems to be taking a similar route as you - would you like to chat?
+      .moteo-ok
+        .moteo-button#startchat Start Chat
+        .moteo-button Ignore
+        .clear
+    .map--outputs
+      .map--output-ok
+        .logo_big
+        .motextok Cool!
+        .motextn We've let your buddies know that you want to travel with them. Check out the chat section for updates!
+      .map--output-found
+        .map--output-found-g
+        .map--output-found-text
+          .map--output-found-header Yay!
+          .map--output-found-description We found <span>6</span> people sharing part of your route
+      .map--output-personas-h
+        .map--output-personas
+          .map--output-persona
+            .persona-image(style='background-image:url(https://static.pexels.com/photos/12072/pexels-photo-12072.jpeg)')
+            .persona-header
+              .persona-header-title Maria Frasia, 22
+              .persona-where You share 24 miles together
+              .persona-desc-h
+                .persona-desc
+    .map--buttons
+      .map-button.button-core.start-analysis
+        text#findTrippers Find Trippers On Your Way
+        text#OptimizingRoute Optimizing Route...
+        text#FindFellows Find some fellow Trippers
+        text#PickTravel Travel with 0 Buddies
+        text#SetChat Return to Map
+      .map-button.button-findMe.white
+        text Let Trippers Find Me
+  -}
