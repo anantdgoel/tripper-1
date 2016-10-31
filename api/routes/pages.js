@@ -13,8 +13,8 @@ module.exports = function(app, keys) {
 
   const fb = {
     redirect_uri: keys.uri + "/checkfb",
-    app_id : "1853016281596915",
-    secret:"b1e51fce92bdc7cd5301f173c0fde292"
+    app_id : "1242117632476189",
+    secret:"b88d65d74404cc28ddca9aff1ddcb52f"
   }
 
   app.get("/login", function(req, res) {

@@ -4,8 +4,8 @@ module.exports = function(status)  {
   }
 
   var uri = {
-    development:"http://localhost:4994",
-    production:"http://tripper.shub.club"
+    development:"https://tripper-1.herokuapp.com/",
+    production:"https://tripper-1.herokuapp.com/"
   }
 
 
